@@ -1,9 +1,9 @@
 let count = 800
-let car = -100
+let car = 10
 let sun = -100
-let Lightgreen = "lime"
+let Lightgreen = "green"
 let Darkorange = "darkorange"
-let Darkred = "darkred"
+let Darkred = "red"
 
 function setup() {
   createCanvas(800, 600);
@@ -59,12 +59,6 @@ function draw() {
   circle (737, 425, 40)
  
   //de auto
-  if (Lightgreen === "lime")
-  car = car +4
-  if (Darkred ==="red")
-    car = car +0
-  if (Darkorange ==="orange")
-    car = car +2
   strokeWeight (0)
   fill ("green")
   rect (car + 1 + 1, 545, 100, 30)
@@ -80,19 +74,24 @@ function draw() {
   circle (car + 1 + 30, 580, 15)
   //rechter wiel
   circle (car + 1 + 80, 580, 15)
+  //beweging auto
   if (car > 800) 
-  car = car = -100 
+  car = car = -100
+  if (Lightgreen === "lime")
+  car = car +4
+  if (Darkred ==="red")
+  car = car +0
+  if (Darkorange ==="orange")
+  car = car +2 
 }
 
 function keyPressed () {
   if (key === "Enter")
-  if (Lightgreen === "lime") 
+  if (Darkred === "red") {
   Darkorange = "orange"
-else {
-Darkred = "red"
-Darkorange = "darkorange"
-}
-  if (Darkorange === "orange")
-  Lightgreen = "green"
-loop 
+  Darkred = "darkred"}
+  else {
+  Darkorange = "darkorange"
+  Lightgreen = "lime"
+  }
 }  
