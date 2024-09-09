@@ -58,12 +58,13 @@ function draw() {
   fill (Lightgreen)
   circle (737, 425, 40)
  
-  
- 
-
-
   //de auto
+  if (Lightgreen === "lime")
   car = car +4
+  if (Darkred ==="red")
+    car = car +0
+  if (Darkorange ==="orange")
+    car = car +2
   strokeWeight (0)
   fill ("green")
   rect (car + 1 + 1, 545, 100, 30)
@@ -86,8 +87,12 @@ function draw() {
 function keyPressed () {
   if (key === "Enter")
   if (Lightgreen === "lime") 
-  Darkred = "red"
-  if (Darkred = "red")
-    Lightgreen = "green"
-} 
- 
+  Darkorange = "orange"
+else {
+Darkred = "red"
+Darkorange = "darkorange"
+}
+  if (Darkorange === "orange")
+  Lightgreen = "green"
+loop 
+}  
