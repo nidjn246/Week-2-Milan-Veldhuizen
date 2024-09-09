@@ -1,6 +1,9 @@
 let count = 800
 let car = -100
 let sun = -100
+let Lightgreen = "lime"
+let Darkorange = "darkorange"
+let Darkred = "darkred"
 
 function setup() {
   createCanvas(800, 600);
@@ -47,12 +50,17 @@ function draw() {
   rect (710, 310, 55, 140)
 
   // de lichten van het stoplicht
-  fill ("darkred")
+  
+  fill (Darkred)
   circle (737, 335, 40)
-  fill ("darkorange")
+  fill (Darkorange)
   circle (737, 380, 40)
-  fill ("darkgreen")
+  fill (Lightgreen)
   circle (737, 425, 40)
+ 
+  
+ 
+
 
   //de auto
   car = car +4
@@ -74,3 +82,12 @@ function draw() {
   if (car > 800) 
   car = car = -100 
 }
+
+function keyPressed () {
+  if (key === "Enter")
+  if (Lightgreen === "lime") 
+  Darkred = "red"
+  if (Darkred = "red")
+    Lightgreen = "green"
+} 
+ 
