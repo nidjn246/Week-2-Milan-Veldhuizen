@@ -1,5 +1,6 @@
-let count = -100
+let count = 800
 let car = -100
+let sun = -100
 
 function setup() {
   createCanvas(800, 600);
@@ -7,17 +8,31 @@ function setup() {
 
 function draw() {
   background(135, 206, 235);
+
+  //bergen
+  strokeWeight (1)
+  fill ("grey")
+  triangle (400, 250, 200, 585, 600, 585)
+  triangle (150, 300, 0, 585, 350, 585)
+
+  //sun
+  sun = sun + 0.5
+  fill ("yellow")
+  strokeWeight (0)
+  circle (sun + 1 + 60, 50, 80)
+  if (sun > 800) 
+    sun = sun = -400
   
   //de wolk 1
   fill (255)
   strokeWeight (0)
-  count = count + 1.5
-  circle (count + 1 + 60, 90, 50)
-  circle (count + 1 + 80, 80, 50)
-  circle (count + 1 + 80, 100, 50)
-  circle (count + 1 + 105, 90, 50)
-  if (count > 800) 
- count = count = -200
+  count = count + -1.5
+  circle (count + -1 + 60, 150, 50)
+  circle (count + -1 + 80, 140, 50)
+  circle (count + -1 + 80, 160, 50)
+  circle (count + -1 + 105, 150, 50)
+  if (count < -200) 
+ count = count = +800
 
   //de weg
   strokeWeight (10)
@@ -32,6 +47,12 @@ function draw() {
   rect (710, 310, 55, 140)
 
   // de lichten van het stoplicht
+  fill ("darkred")
+  circle (737, 335, 40)
+  fill ("darkorange")
+  circle (737, 380, 40)
+  fill ("darkgreen")
+  circle (737, 425, 40)
 
   //de auto
   car = car +4
