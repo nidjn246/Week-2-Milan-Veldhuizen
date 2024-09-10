@@ -21,6 +21,26 @@ function draw() {
   //linkerberg
   triangle (150, 300, 0, 585, 350, 585)
 
+  //bomen achter de auto
+  //boom kleur
+  fill (165, 42, 41)
+  strokeWeight (0)
+  //linker boomstam
+  rect (80, 500, 20, 100)
+  //blaadjes kleur
+  fill (32, 133, 58)
+  //linker blaadjes
+  circle (90, 490, 70)
+  //rechter boomstamkleur
+  fill (165, 42, 41)
+  //rechter boomstam
+  rect (590, 500, 20, 100)
+  //blaadjes kleur
+  fill (32, 133, 58)
+  //rechter blaadjes
+  circle (600, 490, 70)
+  
+
   //sun
   sun = sun + 0.5
   fill (254, 203, 0)
@@ -93,6 +113,17 @@ function draw() {
   car = car +0
   if (color === 3)
   car = car +2 
+
+//voorste boom
+strokeWeight (0)
+//rechter boomstamkleur
+fill (165, 42, 41)
+//rechter boomstam
+rect (350, 500, 20, 100)
+//blaadjes kleur
+fill (32, 133, 58)
+//rechter blaadjes
+circle (360, 490, 70)
 }
 
 //stoplicht lichten op enter klikken
