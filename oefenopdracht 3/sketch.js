@@ -1,11 +1,13 @@
-let score = 100
+let score
 
 function setup() {
   createCanvas(400, 200);
 }
 
 function draw() {
-  background(220);
+  background(0, 100, 100);
+  textSize (50)
+  text (score, 100, 50)
   textSize (50)
   if (score > 89){
     fill ("green")
@@ -19,4 +21,8 @@ function draw() {
   else if (score < 50){
     fill ("red")
     text ("Onvoldoende", 10, 100 )}
+}
+
+function mouseClicked() {
+  score = round (random (0, 100))
 }
