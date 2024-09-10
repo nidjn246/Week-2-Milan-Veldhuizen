@@ -107,11 +107,11 @@ function draw() {
   //beweging auto
   if (car > 800) 
   car = car = -100
-  if (color === 2)
+  if (color == 2)
   car = car +4
-  if (color === 1)
+  if (color == 1)
   car = car +0
-  if (color === 3)
+  if (color == 3)
   car = car +2 
 
 //voorste boom
@@ -128,28 +128,28 @@ circle (360, 490, 70)
 
 //stoplicht lichten op enter klikken
 function keyPressed () {
-  if (key === "Enter"){
 //als je op enter klikt gaat color +1
+  if (key == "Enter"){
   color = color +1}
-  if (color === 4) {
+  if (color == 4) {
   color = 1
   }
 //als color 1 is gaat rood aan
-  if (color === 1){
+  if (color == 1){
     red = "red"
   }
   else {
     red = "darkred"
   }
 //als color 1 is gaat groen aan
-  if (color === 2){
+  if (color == 2){
     green = "lime"
   }
   else {
     green = "green"
   }
 //als color 1 is gaat oranje aan
-  if (color === 3){
+  if (color == 3){
     orange = "orange"
   }
   else {
