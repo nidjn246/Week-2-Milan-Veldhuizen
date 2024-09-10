@@ -1,4 +1,4 @@
-let count = 800
+let wolk = 800
 let car = 10
 let sun = -100
 let Lightgreen = "green"
@@ -15,27 +15,31 @@ function draw() {
   //bergen
   strokeWeight (1)
   fill ("grey")
+  //rechterberg
   triangle (400, 250, 200, 585, 600, 585)
+  //linkerberg
   triangle (150, 300, 0, 585, 350, 585)
 
   //sun
   sun = sun + 0.5
   fill ("yellow")
   strokeWeight (0)
+  //sun beweging
   circle (sun + 1 + 60, 50, 80)
   if (sun > 800) 
-    sun = sun = -400
+    sun = sun = -100
   
-  //de wolk 1
+  //de wolk 
   fill (255)
   strokeWeight (0)
-  count = count + -1.5
-  circle (count + -1 + 60, 150, 50)
-  circle (count + -1 + 80, 140, 50)
-  circle (count + -1 + 80, 160, 50)
-  circle (count + -1 + 105, 150, 50)
-  if (count < -200) 
- count = count = +800
+  circle (wolk + -1 + 60, 150, 50)
+  circle (wolk + -1 + 80, 140, 50)
+  circle (wolk + -1 + 80, 160, 50)
+  circle (wolk + -1 + 105, 150, 50)
+  //wolk beweging
+  wolk = wolk + -1.5
+  if (wolk < -200) 
+  wolk = wolk = +800
 
   //de weg
   strokeWeight (10)
@@ -45,12 +49,12 @@ function draw() {
   //het stoplicht
   strokeWeight (0)
   fill (50, 50, 50)
-  //het frame
+  //onderste deel stoplight
   rect (730, 450, 15, 135)
+  //bovenste dell stoplight
   rect (710, 310, 55, 140)
 
   // de lichten van het stoplicht
-  
   fill (Darkred)
   circle (737, 335, 40)
   fill (Darkorange)
@@ -61,11 +65,16 @@ function draw() {
   //de auto
   strokeWeight (0)
   fill ("green")
+  //onderste autoframe
   rect (car + 1 + 1, 545, 100, 30)
+  //bovenste outoframe
   rect (car + 1 + 15, 520, 70, 30)
+  //kleur van de ramen
   fill (135, 206, 235)
   strokeWeight (1)
+  //linker raam
   rect (car + 1 + 60, 530, 20, 15)
+  //rechter raam
   rect (car + 1 + 30, 530, 20, 15)
   stroke (0)
   fill (255)
