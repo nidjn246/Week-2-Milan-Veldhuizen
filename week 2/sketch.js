@@ -1,9 +1,10 @@
 let wolk = 800
 let car = 10
 let sun = -100
-let Lightgreen = "green"
-let Darkorange = "darkorange"
-let Darkred = "red"
+let color = 1
+let red = "red"
+let green = "green"
+let orange = "orange"
 
 function setup() {
   createCanvas(800, 600);
@@ -22,12 +23,12 @@ function draw() {
 
   //sun
   sun = sun + 0.5
-  fill ("yellow")
+  fill (254, 203, 0)
   strokeWeight (0)
   //sun beweging
   circle (sun + 1 + 60, 50, 80)
   if (sun > 800) 
-    sun = sun = -100
+  sun = sun = -100
   
   //de wolk 
   fill (255)
@@ -55,11 +56,11 @@ function draw() {
   rect (710, 310, 55, 140)
 
   // de lichten van het stoplicht
-  fill (Darkred)
+  fill (red)
   circle (737, 335, 40)
-  fill (Darkorange)
+  fill (orange)
   circle (737, 380, 40)
-  fill (Lightgreen)
+  fill (green)
   circle (737, 425, 40)
  
   //de auto
@@ -86,21 +87,41 @@ function draw() {
   //beweging auto
   if (car > 800) 
   car = car = -100
-  if (Lightgreen === "lime")
+  if (color === 2)
   car = car +4
-  if (Darkred ==="red")
+  if (color === 1)
   car = car +0
-  if (Darkorange ==="orange")
+  if (color === 3)
   car = car +2 
 }
 
+//stoplicht lichten op enter klikken
 function keyPressed () {
-  if (key === "Enter")
-  if (Darkred === "red") {
-  Darkorange = "orange"
-  Darkred = "darkred"}
-  else {
-  Darkorange = "darkorange"
-  Lightgreen = "lime"
+  if (key === "Enter"){
+//als je op enter klikt gaat color +1
+  color = color +1}
+  if (color === 4) {
+  color = 1
   }
-}  
+//als color 1 is gaat rood aan
+  if (color === 1){
+    red = "red"
+  }
+  else {
+    red = "darkred"
+  }
+//als color 1 is gaat groen aan
+  if (color === 2){
+    green = "lime"
+  }
+  else {
+    green = "green"
+  }
+//als color 1 is gaat oranje aan
+  if (color === 3){
+    orange = "orange"
+  }
+  else {
+    orange = "darkorange"
+  }
+}
