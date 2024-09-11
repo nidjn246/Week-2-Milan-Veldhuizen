@@ -1,11 +1,12 @@
 let wolk = 800
 let car = 10
 let sun = -100
-let color = 1
+let color = 0
 let red = "red"
 let green = "green"
 let orange = "orange"
 let tijd = 0
+let brakesound
 
 function setup() {
   createCanvas(800, 600);
@@ -23,7 +24,7 @@ function draw() {
   //als de tijd over 3560 is maak de tijd 0
   else if (tijd > 3560){
   tijd = 0}
-  console.log (tijd)
+  console.log (color)
   //bergen
   strokeWeight (1)
   fill ("grey")
@@ -52,7 +53,7 @@ function draw() {
   circle (600, 490, 70)
   
 
-  //sun
+  //sun and moon
   sun = sun + 0.5
   //als het dag is maak hele gele zon
   if (tijd < 1780){
@@ -65,7 +66,7 @@ function draw() {
   fill (25, 25, 112)
   circle (sun + 15 + 60, 50, 60)}
   strokeWeight (0)
-  //sun beweging
+  //sun and moon beweging
   if (sun > 800) 
   sun = sun = -100
   
@@ -135,11 +136,11 @@ function draw() {
   //beweging auto
   if (car > 800) 
   car = car = -100
-  if (color == 2)
+  if (color > 0 && color < 300)
   car = car +4
-  if (color == 1)
+  if (color > 600 && color < 800)
   car = car +0
-  if (color == 3)
+  if (color > 300 && color < 600)
   car = car +2 
 
 //voorste boom
@@ -152,35 +153,34 @@ rect (350, 500, 20, 100)
 fill (32, 133, 58)
 //rechter blaadjes
 circle (360, 490, 70)
-}
 
-//stoplicht lichten op enter klikken
-function keyPressed () {
-//als je op enter klikt gaat color +1
-  if (key == "Enter"){
-  color = color +1}
-  if (color == 4) {
-  color = 1
-  }
-//als color 1 is gaat rood aan
-  if (color == 1){
+//lichten
+color = color + 1
+
+//als color 900 tot 1100 is gaat rood aan
+  if (color > 600 && color < 800){
     red = "red"
   }
   else {
     red = "darkred"
   }
-//als color 1 is gaat groen aan
-  if (color == 2){
+//als color 0 tot 600 is gaat groen aan
+  if (color > 0 && color < 300){
     green = "lime"
   }
   else {
     green = "green"
   }
-//als color 1 is gaat oranje aan
-  if (color == 3){
+//als color 600 tot 900 is gaat oranje aan
+  if (color > 300 && color < 600){
     orange = "orange"
   }
   else {
     orange = "darkorange"
+  }
+  if (color > 800)
+    color = 0
+  if (color == 600 && color == 601 && color == 602){
+  
   }
 }
