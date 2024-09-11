@@ -5,14 +5,25 @@ let color = 1
 let red = "red"
 let green = "green"
 let orange = "orange"
+let tijd = 0
 
 function setup() {
   createCanvas(800, 600);
 }
-
+//135, 206, 235 ////1750////3550
 function draw() {
-  background(135, 206, 235);
-
+  //de lucht
+  tijd = tijd + 1
+  //als de tijd onder 1780 is maak het dag
+  if (tijd >= 0 && tijd < 1780){
+  background(135, 206, 235)}
+  //als de tijd over 1780 zit maak het nacht
+  else if (tijd > 1780 && tijd < 3560){
+  background (25, 25, 112)}
+  //als de tijd over 3560 is maak de tijd 0
+  else if (tijd > 3560){
+  tijd = 0}
+  console.log (tijd)
   //bergen
   strokeWeight (1)
   fill ("grey")
@@ -43,20 +54,37 @@ function draw() {
 
   //sun
   sun = sun + 0.5
+  //als het dag is maak hele gele zon
+  if (tijd < 1780){
   fill (254, 203, 0)
+  circle (sun + 1 + 60, 50, 80)}
+  //als het nacht is maak de zon een halve maan
+  else { 
+  fill (246, 241, 213)
+  circle (sun + 1 + 60, 50, 80)
+  fill (25, 25, 112)
+  circle (sun + 15 + 60, 50, 60)}
   strokeWeight (0)
   //sun beweging
-  circle (sun + 1 + 60, 50, 80)
   if (sun > 800) 
   sun = sun = -100
   
   //de wolk 
+  //als het dag is maak witte woll
+  if (tijd < 1780){
   fill (255)
   strokeWeight (0)
   circle (wolk + -1 + 60, 150, 50)
   circle (wolk + -1 + 80, 140, 50)
   circle (wolk + -1 + 80, 160, 50)
-  circle (wolk + -1 + 105, 150, 50)
+  circle (wolk + -1 + 105, 150, 50)}
+  //als het nacht is maak grijze wolk
+  else { 
+  fill (71, 71, 71)
+  circle (wolk + -1 + 60, 150, 50)
+  circle (wolk + -1 + 80, 140, 50)
+  circle (wolk + -1 + 80, 160, 50)
+  circle (wolk + -1 + 105, 150, 50)}
   //wolk beweging
   wolk = wolk + -1.5
   if (wolk < -200) 
