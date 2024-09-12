@@ -28,5 +28,5 @@ function draw() {
 
   function mouseClicked ( ) 
   {
-  rng = random(0, 1000)
+  rng = round (random(0, 1000))
 }
