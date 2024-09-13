@@ -182,12 +182,14 @@ circle (360, 490, 70)
 }
 
 function mouseClicked(){
+  //als de muisX en Y positie tussen die 2 getallen zit maak de auto rood
   if (mouseX > 717 && mouseX < 757 && mouseY > 315 && mouseY < 355){
   autokleur = "red"}
 
+  //als de muisX en Y positie tussen die 2 getallen zit maak de auto oranje
   if (mouseX > 717 && mouseX < 757 && mouseY > 360 && mouseY < 400){
   autokleur = "orange"}
-
+  //als de muisX en Y positie tussen die 2 getallen zit maak de auto groen
   if (mouseX > 717 && mouseX < 757 && mouseY > 405 && mouseY < 445){
   autokleur = "green"}
 
