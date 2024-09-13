@@ -6,12 +6,12 @@ let red = "red"
 let green = "green"
 let orange = "orange"
 let tijd = 0
-let brakesound
+let autokleur = "green"
 
 function setup() {
   createCanvas(800, 600);
 }
-//135, 206, 235 ////1750////3550
+
 function draw() {
   //de lucht
   tijd = tijd + 1
@@ -24,7 +24,6 @@ function draw() {
   //als de tijd over 3560 is maak de tijd 0
   else if (tijd > 3560){
   tijd = 0}
-  console.log (color)
   //bergen
   strokeWeight (1)
   fill ("grey")
@@ -51,7 +50,6 @@ function draw() {
   fill (32, 133, 58)
   //rechter blaadjes
   circle (600, 490, 70)
-  
 
   //sun and moon
   sun = sun + 0.5
@@ -104,7 +102,8 @@ function draw() {
   //bovenste dell stoplight
   rect (710, 310, 55, 140)
 
-  // de lichten van het stoplicht
+  //de lichten van het stoplicht
+  color = color + 1
   fill (red)
   circle (737, 335, 40)
   fill (orange)
@@ -114,7 +113,7 @@ function draw() {
  
   //de auto
   strokeWeight (0)
-  fill ("green")
+  fill (autokleur)
   //onderste autoframe
   rect (car + 1 + 1, 545, 100, 30)
   //bovenste outoframe
@@ -154,12 +153,10 @@ fill (32, 133, 58)
 //rechter blaadjes
 circle (360, 490, 70)
 
-//lichten
-color = color + 1
-
 //als color 900 tot 1100 is gaat rood aan
   if (color > 600 && color < 800){
     red = "red"
+    
   }
   else {
     red = "darkred"
@@ -181,6 +178,17 @@ color = color + 1
   if (color > 800)
     color = 0
   if (color == 600 && color == 601 && color == 602){
-  
   }
+}
+
+function mouseClicked(){
+  if (mouseX > 717 && mouseX < 757 && mouseY > 315 && mouseY < 355){
+  autokleur = "red"}
+
+  if (mouseX > 717 && mouseX < 757 && mouseY > 360 && mouseY < 400){
+  autokleur = "orange"}
+
+  if (mouseX > 717 && mouseX < 757 && mouseY > 405 && mouseY < 445){
+  autokleur = "green"}
+
 }
